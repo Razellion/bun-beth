@@ -1,0 +1,22 @@
+{
+  "name": "todo-bun",
+  "version": "1.0.50",
+  "module": "src/index.tsx",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"bun run --watch src/index.tsx\" \"bun run tw:dev\"",
+    "tw": "bunx tailwindcss -i ./src/components/styles.css -o ./tailwind-gen/styles.css",
+    "tw:dev": "bunx tailwindcss -i ./src/components/styles.css -o ./tailwind-gen/styles.css --watch"
+  },
+  "dependencies": {
+    "@elysiajs/html": "^0.6.5",
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "typed-html": "^3.0.1",
+    "concurrently": "^8.2.0",
+    "tailwindcss": "^3.3.3"
+  }
+}
