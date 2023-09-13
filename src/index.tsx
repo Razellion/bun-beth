@@ -6,10 +6,18 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 
+const pageTransition = `
+opacity: 1;
+animation-name: fadeInOpacity;
+animation-iteration-count: 1;
+animation-timing-function: ease-in;
+animation-duration: 0.5s;
+`;
+
 const Wrapper = ({ children }: elements.Children) => {
   return (
     <BaseHtml>
-      <div>
+      <div style={pageTransition}>
         <Navbar />
         {children}
       </div>
@@ -36,6 +44,7 @@ app.get("/about", () => {
 app.post("/clicked", () => <p>from the server euy</p>);
 
 app.get("/styles.css", () => Bun.file("./tailwind-gen/styles.css"));
+app.get("/htmx.min.js", () => Bun.file("./utils/htmx.min.js"));
 app.listen(3000);
 
 console.log(
