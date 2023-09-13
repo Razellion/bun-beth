@@ -1,9 +1,16 @@
-import * as elements from 'typed-html'
+import * as elements from "typed-html";
 const About = () => {
-    return(
+  return (
     <div>
       <h1 class="text-2xl">About</h1>
-      <button class="px-2 border rounded-lg" hx-get="/">Test</button>
+      <button
+        class="px-2 border rounded-lg"
+        hx-post="/clicked"
+        hx-swap="afterend"
+      >
+        Test
+      </button>
     </div>
-)}
+  );
+};
 export default About;
